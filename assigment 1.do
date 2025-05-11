@@ -85,7 +85,7 @@ use "ps1_data1.dta", clear
 set seed 300
 
 splitsample, generate(svar) balance(schoolid) values(0, 1)
-ttest pre_verb, by(svar)
+quietly ttest pre_verb, by(svar)
 display  ///
   "Control mean = "   %6.3f r(mu_1)   ///
   ", Treatment mean = " %6.3f r(mu_2)  ///
